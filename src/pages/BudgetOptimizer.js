@@ -12,15 +12,18 @@ const BudgetOptimizer = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="BudgetOptimizer" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <Text style={styles.title}>Budget Optimizer</Text>
           <Text style={styles.text}>
             This is the legacy Budget Optimizer page. Please use the new AI Budget Optimizer.
           </Text>
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 };
@@ -32,6 +35,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 20,

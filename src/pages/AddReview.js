@@ -44,7 +44,10 @@ const AddReview = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="AddReview" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <Text style={styles.title}>Add Review</Text>
           <View style={styles.form}>
@@ -88,8 +91,8 @@ const AddReview = () => {
             </TouchableOpacity>
           </View>
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 };
@@ -101,6 +104,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 20,

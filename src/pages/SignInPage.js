@@ -47,8 +47,8 @@ const SignInPage = () => {
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
+        <Footer />
       </View>
-      <Footer />
     </View>
   );
 };

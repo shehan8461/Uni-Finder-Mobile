@@ -31,7 +31,11 @@ const HomePage = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="Home" />
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.scrollView} 
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Hero Section */}
         <LinearGradient
           colors={['#667eea', '#764ba2']}
@@ -181,6 +185,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   heroSection: {
     minHeight: isSmallDevice ? height * 0.75 : height * 0.7,

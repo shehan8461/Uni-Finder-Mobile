@@ -66,7 +66,10 @@ export default function SignIn() {
   return (
     <View style={styles.container}>
       <Header currentRoute="SignInNew" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <View style={styles.card}>
             <Text style={styles.title}>Sign In</Text>
@@ -135,8 +138,8 @@ export default function SignIn() {
             </TouchableOpacity>
           </View>
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 }
@@ -148,6 +151,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     flex: 1,

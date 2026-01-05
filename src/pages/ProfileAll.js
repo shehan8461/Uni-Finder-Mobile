@@ -41,7 +41,10 @@ const ProfileAll = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="ProfileAll" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <Text style={styles.title}>Reviews</Text>
           {loading ? (
@@ -58,8 +61,8 @@ const ProfileAll = () => {
             <Text style={styles.noData}>No reviews available</Text>
           )}
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 };
@@ -71,6 +74,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 20,

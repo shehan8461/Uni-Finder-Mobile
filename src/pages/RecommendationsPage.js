@@ -62,7 +62,10 @@ const RecommendationsPage = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="Recommendations" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <Text style={styles.title}>Recommendations</Text>
           {keyword && (
@@ -94,8 +97,8 @@ const RecommendationsPage = () => {
             <Text style={styles.noData}>No recommendations available</Text>
           )}
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 };
@@ -107,6 +110,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 20,

@@ -1,52 +1,50 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
+const { width } = Dimensions.get('window');
 
 const Footer = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scroll}>
-        <View style={styles.content}>
-          <View style={styles.section}>
-            <Text style={styles.heading}>AI Learning Platform</Text>
-            <Text style={styles.text}>
-              Empowering learners with intelligent educational guidance and personalized learning experiences.
-            </Text>
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.heading}>Quick Links</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-              <Text style={styles.link}>Home</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Recommendations')}>
-              <Text style={styles.link}>AI Recommendations</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('ProfileAll')}>
-              <Text style={styles.link}>Learning Profile</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Keywords')}>
-              <Text style={styles.link}>Study Keywords</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.heading}>Connect With Us</Text>
-            <Text style={styles.text}>Join our community of AI-powered learners</Text>
-            <View style={styles.socialIcons}>
-              <Text style={styles.socialIcon}>📚</Text>
-              <Text style={styles.socialIcon}>🤖</Text>
-              <Text style={styles.socialIcon}>🎓</Text>
-            </View>
-          </View>
+      <View style={styles.content}>
+        <View style={styles.section}>
+          <Text style={styles.heading}>Quick Links</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.linkButton}>
+            <Text style={styles.link}>Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Recommendations')} style={styles.linkButton}>
+            <Text style={styles.link}>Recommendations</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('ProfileAll')} style={styles.linkButton}>
+            <Text style={styles.link}>Reviews</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Keywords')} style={styles.linkButton}>
+            <Text style={styles.link}>Solutions</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('BudgetOptimizerNew')} style={styles.linkButton}>
+            <Text style={styles.link}>Budget</Text>
+          </TouchableOpacity>
         </View>
-      </ScrollView>
+
+        <View style={styles.section}>
+          <Text style={styles.heading}>Connect</Text>
+          <View style={styles.socialIcons}>
+            <Text style={styles.socialIcon}>📚</Text>
+            <Text style={styles.socialIcon}>🤖</Text>
+            <Text style={styles.socialIcon}>🎓</Text>
+          </View>
+          <Text style={styles.text}>
+            AI-Powered Educational Platform
+          </Text>
+        </View>
+      </View>
 
       <View style={styles.divider} />
       <Text style={styles.copyright}>
-        &copy; 2024 AI Educational Guidance Platform. Transforming learning through intelligent technology.
+        &copy; 2024 UniFinder. All rights reserved.
       </Text>
     </View>
   );
@@ -55,56 +53,61 @@ const Footer = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#2c3e50',
-    paddingVertical: 30,
-    paddingHorizontal: 20,
-  },
-  scroll: {
-    flexGrow: 0,
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    width: '100%',
   },
   content: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     flexWrap: 'wrap',
+    marginBottom: 15,
   },
   section: {
-    minWidth: 200,
-    marginBottom: 20,
-    marginHorizontal: 15,
+    flex: 1,
+    minWidth: width < 375 ? '100%' : '45%',
+    marginBottom: 15,
   },
   heading: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   text: {
     color: '#ecf0f1',
-    fontSize: 12,
-    lineHeight: 18,
+    fontSize: 11,
+    lineHeight: 16,
+    marginTop: 8,
+  },
+  linkButton: {
+    marginBottom: 6,
   },
   link: {
     color: '#ecf0f1',
     fontSize: 12,
-    marginBottom: 8,
     textDecorationLine: 'underline',
   },
   socialIcons: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 8,
+    marginBottom: 8,
   },
   socialIcon: {
-    fontSize: 24,
-    marginRight: 15,
+    fontSize: 20,
+    marginRight: 12,
   },
   divider: {
     height: 1,
     backgroundColor: '#34495e',
-    marginVertical: 20,
+    marginVertical: 12,
   },
   copyright: {
     color: '#95a5a6',
-    fontSize: 11,
+    fontSize: 10,
     textAlign: 'center',
+    lineHeight: 14,
   },
 });
 

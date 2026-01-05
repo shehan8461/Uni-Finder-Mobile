@@ -51,7 +51,10 @@ export default function SignUp() {
   return (
     <View style={styles.container}>
       <Header currentRoute="SignUp" />
-      <ScrollView style={styles.scrollView}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.content}>
           <Text style={styles.title}>Sign Up</Text>
           <TextInput
@@ -94,8 +97,8 @@ export default function SignUp() {
           </View>
           {error && <Text style={styles.errorText}>Something went wrong!</Text>}
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 }
@@ -107,6 +110,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 20,

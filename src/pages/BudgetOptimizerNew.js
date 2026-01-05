@@ -1013,7 +1013,11 @@ const BudgetOptimizerNew = () => {
   return (
     <View style={styles.container}>
       <Header currentRoute="BudgetOptimizerNew" />
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.scrollView} 
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.content}>
           {/* Header */}
           <View style={styles.header}>
@@ -1045,8 +1049,8 @@ const BudgetOptimizerNew = () => {
           {/* Navigation Buttons */}
           {renderNavigationButtons()}
         </View>
+        <Footer />
       </ScrollView>
-      <Footer />
     </View>
   );
 };
@@ -1058,6 +1062,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   content: {
     padding: 15,
